@@ -1310,3 +1310,5 @@ export const afriTraceABI = [
         "type": "function"
     }
 ]
+
+export const contractAddress = "0xF7ce2394aA4e767022b67f6695fDC4aE41F7F3B6"
