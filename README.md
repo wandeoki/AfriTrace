@@ -32,7 +32,7 @@
 ## Technical Implementation
 
 ### 1. The Graph Integration
-- We use ** subgraph** to index supply chain data recorded in smart contracts.
+- We use **subgraphs** to index supply chain data recorded in smart contracts.
 - We utilize **GraphQL API** for efficient querying of data like product journeys, certifications, authenticity, and transaction details.
 
 ### 2. Optimism's OP Stack
