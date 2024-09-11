@@ -82,6 +82,11 @@ Ensure you have the following installed:
 ### Subgraph endpoint
 - https://thegraph.com/studio/subgraph/afritrace
 
+### MVP WebApp
+- https://future-answer-hissing.on-fleek.app/
+
+### Demo 
+- 
 ### Installation
 
 1. Clone the repository:
