@@ -1,6 +1,6 @@
 {
-  "name": "AfriTrace",
-  "license": "UNLICENSED",
+  "name": "afritrace",
+  "license": "MIT",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
