@@ -26,6 +26,9 @@
 - A digital marketplace connecting African producers with global buyers.
 - Transparent pricing, fair compensation, and reduced middlemen via decentralized processes.
 
+### 6. Settlement in native currencies
+- Product owners have the option of getting their proceeds in their MPESA/MOMO Wallet to aid financial inclusion
+
 ## Technical Implementation
 
 ### 1. The Graph Integration
