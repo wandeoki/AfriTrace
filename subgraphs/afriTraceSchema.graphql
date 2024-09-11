@@ -1,0 +1,48 @@
+type Product @entity {
+  id: ID!
+  name: String!
+  description: String!
+  producer: Bytes!
+  timestamp: BigInt!
+  ipfsHash: String!
+  isCertified: Boolean!
+  price: BigInt!
+  carbonFootprint: BigInt!
+  supplyChainSteps: [SupplyChainStep!]! @derivedFrom(field: "product")
+  disputes: [Dispute!]! @derivedFrom(field: "product")
+}
+
+type SupplyChainStep @entity {
+  id: ID!
+  product: Product!
+  stakeholder: Bytes!
+  location: String!
+  timestamp: BigInt!
+  stepDescription: String!
+  temperature: BigInt!
+  humidity: BigInt!
+}
+
+type Dispute @entity {
+  id: ID!
+  product: Product!
+  initiator: Bytes!
+  description: String!
+  resolved: Boolean!
+  resolution: String
+}
+
+type CarbonOffset @entity {
+  id: ID!
+  user: Bytes!
+  amount: BigInt!
+  timestamp: BigInt!
+}
+
+type User @entity {
+  id: Bytes!
+  carbonCredits: BigInt!
+  productsCreated: [Product!]! @derivedFrom(field: "producer")
+  disputesInitiated: [Dispute!]! @derivedFrom(field: "initiator")
+  carbonOffsets: [CarbonOffset!]! @derivedFrom(field: "user")
+}

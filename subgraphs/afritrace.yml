@@ -1,0 +1,38 @@
+specVersion: 0.0.5
+schema:
+  file: ./afriTraceschema.graphql
+dataSources:
+  - kind: ethereum
+    name: AfriTrace
+    network: optimism-sepolia  
+    source:
+      address: "0xF7ce2394aA4e767022b67f6695fDC4aE41F7F3B6"  
+      abi: AfriTrace
+      startBlock: 0  
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Product
+        - SupplyChainStep
+        - Dispute
+        - CarbonOffset
+        - User
+      abis:
+        - name: AfriTrace
+          file: ./AfriTrace.json
+      eventHandlers:
+        - event: ProductCreated(uint256,string,address)
+          handler: handleProductCreated
+        - event: SupplyChainUpdated(uint256,address,string)
+          handler: handleSupplyChainUpdated
+        - event: ProductCertified(uint256,address)
+          handler: handleProductCertified
+        - event: DisputeCreated(uint256,uint256,address)
+          handler: handleDisputeCreated
+        - event: DisputeResolved(uint256,string)
+          handler: handleDisputeResolved
+        - event: CarbonOffseted(address,uint256)
+          handler: handleCarbonOffseted
+      file: ./mapping.ts

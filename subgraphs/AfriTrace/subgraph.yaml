@@ -1,0 +1,59 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Afritrace
+    network: optimism-sepolia
+    source:
+      address: "0xF7ce2394aA4e767022b67f6695fDC4aE41F7F3B6"
+      abi: Afritrace
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - CarbonOffseted
+        - DisputeCreated
+        - DisputeResolved
+        - ProductCertified
+        - ProductCreated
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+        - SupplyChainUpdated
+        - Transfer
+      abis:
+        - name: Afritrace
+          file: ./abis/Afritrace.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: CarbonOffseted(address,uint256)
+          handler: handleCarbonOffseted
+        - event: DisputeCreated(uint256,uint256,address)
+          handler: handleDisputeCreated
+        - event: DisputeResolved(uint256,string)
+          handler: handleDisputeResolved
+        - event: ProductCertified(uint256,address)
+          handler: handleProductCertified
+        - event: ProductCreated(uint256,string,address)
+          handler: handleProductCreated
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+        - event: SupplyChainUpdated(uint256,address,string)
+          handler: handleSupplyChainUpdated
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/afritrace.ts
