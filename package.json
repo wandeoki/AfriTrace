@@ -1,0 +1,21 @@
+{
+  "name": "afritrace",
+  "version": "1.0.0",
+  "description": "**AfriTrace** is a blockchain-based supply chain traceability platform built to enhance the global competitiveness of African exports. By leveraging technologies like **The Graph**, **Optimism's OP Stack**, and **web3.js**, AfriTrace ensures **transparency**, **authenticity**, and **efficiency** in tracking high-value African products from their origin to the final consumer. It empowers African producers by integrating blockchain-based product tracking, carbon footprint offsetting, and a marketplace for connecting with global buyers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.10"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^1.2.0",
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.4.5"
+  }
+}
