@@ -32,11 +32,11 @@
 ## Technical Implementation
 
 ### 1. The Graph Integration
-- Build a **custom subgraph** to index supply chain data recorded in smart contracts.
-- Provide a **GraphQL API** for efficient querying of data like product journeys, certifications, authenticity, and transaction details.
+- We use ** subgraph** to index supply chain data recorded in smart contracts.
+- We utilize **GraphQL API** for efficient querying of data like product journeys, certifications, authenticity, and transaction details.
 
 ### 2. Optimism's OP Stack
-- Smart contracts deployed on **Optimism**, a Layer 2 Ethereum scaling solution.
+- Smart contracts deployed on **Optimism**.
 - Leverage Optimism's **OP Stack** for fast, cost-effective transactions.
 
 ### 3. OP Stack Calculator
@@ -86,7 +86,7 @@ Ensure you have the following installed:
 - https://future-answer-hissing.on-fleek.app/
 
 ### Demo 
-- 
+- https://docs.google.com/presentation/d/1Vls_eZQXlBIVWae_qsXQeQrJv9ZHRHtJ/edit?usp=sharing&ouid=107174095406839047177&rtpof=true&sd=true
 ### Installation
 
 1. Clone the repository:
