@@ -75,6 +75,10 @@ Ensure you have the following installed:
 - **web3.js**
 - **Optimism SDK**
 
+### Contract addresses
+- https://sepolia-optimism.etherscan.io/address/0xF7ce2394aA4e767022b67f6695fDC4aE41F7F3B6
+- https://sepolia-optimism.etherscan.io/address/0xee150424a9936d09b01442c666627657d2780c6e
+
 ### Installation
 
 1. Clone the repository:
