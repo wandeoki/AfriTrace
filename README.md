@@ -2,7 +2,7 @@
 
 ## Overview
 
-**AfriTrace** is a supply chain traceability platform built to enhance the global competitiveness of African exports. By leveraging technologies like **The Graph**, **Optimism's OP Stack**, and **web3.js**, AfriTrace ensures **transparency**, **authenticity**, and **efficiency** in tracking high-value African products from their origin to the final consumer. It empowers African producers by integrating blockchain-based product tracking, carbon footprint offsetting, and a marketplace for connecting with global buyers.
+**AfriTrace** is a supply chain traceability platform built to enhance the global competitiveness of African exports. By leveraging technologies like **The Graph**, **Optimism's OP Stack**, and **web3.js**, AfriTrace ensures **transparency**, **authenticity**, and **efficiency** in tracking high-value African products from their origin to the final consumer. It empowers African producers by integrating  product tracking, carbon footprint offsetting, and a marketplace for connecting with global buyers.
 
 ## Key Features
 
