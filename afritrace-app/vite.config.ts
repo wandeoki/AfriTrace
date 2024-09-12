@@ -8,5 +8,8 @@ export default defineConfig({
     rollupOptions: {
       external: ['graphql']
     }
-  }
+  },
+  optimizeDeps: {
+    include: ['@emotion/react', '@emotion/styled'],
+  },
 })
