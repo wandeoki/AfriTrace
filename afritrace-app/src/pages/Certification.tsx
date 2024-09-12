@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Typography, Card, CardContent, Button, Box } from '@mui/material';
 
 interface Product {

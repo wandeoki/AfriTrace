@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Typography, Card, CardContent, Button, TextField, Box, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 
 interface Dispute {

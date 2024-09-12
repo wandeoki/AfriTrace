@@ -1,34 +1,8 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useMutation, useQuery } from '@apollo/client';
-import { gql } from '@apollo/client';
 import { Typography, Card, CardContent, Button, TextField, Box } from '@mui/material';
 
-// Mock GraphQL queries for development purposes
-const GET_SUPPLY_CHAIN = gql`
-  query GetSupplyChain($id: ID!) {
-    product(id: $id) {
-      id
-      name
-      supplyChainSteps {
-        stakeholder
-        location
-        timestamp
-        stepDescription
-        temperature
-        humidity
-      }
-    }
-  }
-`;
+      
 
-const ADD_SUPPLY_CHAIN_STEP = gql`
-  mutation AddSupplyChainStep($productId: ID!, $location: String!, $stepDescription: String!, $temperature: Int!, $humidity: Int!) {
-    addSupplyChainStep(productId: $productId, location: $location, stepDescription: $stepDescription, temperature: $temperature, humidity: $humidity) {
-      id
-    }
-  }
-`;
 
 interface SupplyChainStep {
   stakeholder: string;
@@ -50,8 +24,7 @@ interface QueryData {
 }
 
 function SupplyChain() {
-  const { id } = useParams<{ id: string }>();
-
+  
 
   const [newStep, setNewStep] = useState({
     location: '',

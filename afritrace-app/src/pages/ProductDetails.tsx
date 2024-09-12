@@ -1,5 +1,3 @@
-import React from "react";
-import { useParams } from "react-router-dom";
 import {
   Typography,
   Card,
@@ -17,7 +15,6 @@ import {
 } from "@mui/lab";
 
 function ProductDetails() {
-  const { id } = useParams();
 
   const mockData = {
     product: {

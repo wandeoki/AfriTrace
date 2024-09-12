@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import {
   Typography,
   Card,
@@ -36,7 +36,7 @@ const CardGrid = styled(Box)(({ theme }) => ({
   gap: theme.spacing(3),
 }));
 
-const StyledCard = styled(Card)(({ theme }) => ({
+const StyledCard = styled(Card)(({ }) => ({
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
@@ -84,9 +84,8 @@ const mockData: CarbonCreditData = {
 function CarbonOffset() {
   const [address, setAddress] = useState<string>('');
   const [offsetAmount, setOffsetAmount] = useState<number>(100);
-  const [data] = useState<CarbonCreditData>(mockData); // Using mock data for testing
-  const [loading] = useState<boolean>(false); // Simulating loading state
-  const [error] = useState<string | null>(null); // Simulating error state
+  const [data] = useState<CarbonCreditData>(mockData); 
+  const [loading] = useState<boolean>(false); 
 
   const handleOffset = async () => {
     try {

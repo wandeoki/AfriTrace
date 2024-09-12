@@ -105,7 +105,7 @@ const mockData = {
   };
   
 function Dashboard() {
-  const { data, status } = useQuery<Data>({
+  const {  status } = useQuery<Data>({
     queryKey: ['data'],
     async queryFn() {
       return await request<Data>(url, query);
