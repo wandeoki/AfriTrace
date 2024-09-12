@@ -14,6 +14,7 @@ import {
   TimelineDot,
 } from "@mui/lab";
 
+
 function ProductDetails() {
 
   const mockData = {

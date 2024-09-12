@@ -2,6 +2,7 @@ import { Typography, Box, Card, CardContent, CardActions, Button } from '@mui/ma
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { gql, request } from 'graphql-request';
+import { useState, useEffect } from 'react';
 
 interface Product {
   id: string;
@@ -31,7 +32,7 @@ interface Data {
 
 const query = gql`
   {
-    products(first: 5) {
+    products(first: 10) {
       id
       name
       description
@@ -39,78 +40,77 @@ const query = gql`
         id
       }
     }
-    supplyChainSteps(first: 5) {
-      id
-      product {
-        id
-      }
-      stakeholder {
-        id
-      }
-      location
-    }
   }
 `;
 
 const url = 'https://api.studio.thegraph.com/query/88776/afritrace/version/latest';
 
 const mockData = {
-    products: [
-      {
-        id: '1',
-        name: 'Organic Tomatoes',
-        description: 'Fresh organic tomatoes grown sustainably.',
-        producer: {
-          id: 'A123',
-        },
-        isCertified: true,
+  products: [
+    {
+      id: '1',
+      name: 'Organic Tomatoes',
+      description: 'Fresh organic tomatoes grown sustainably.',
+      producer: {
+        id: 'A123',
       },
-      {
-        id: '2',
-        name: 'Free-range Chicken',
-        description: 'Ethically raised free-range chicken.',
-        producer: {
-          id: 'B456',
-        },
-        isCertified: false,
+      isCertified: true,
+    },
+    {
+      id: '2',
+      name: 'Free-range Chicken',
+      description: 'Ethically raised free-range chicken.',
+      producer: {
+        id: 'B456',
       },
-      {
-        id: '3',
-        name: 'Almond Milk',
-        description: 'Homemade almond milk with no preservatives.',
-        producer: {
-          id: 'C789',
-        },
-        isCertified: true,
+      isCertified: false,
+    },
+    {
+      id: '3',
+      name: 'Almond Milk',
+      description: 'Homemade almond milk with no preservatives.',
+      producer: {
+        id: 'C789',
       },
-      {
-        id: '4',
-        name: 'Honey',
-        description: 'Natural honey sourced from local beekeepers.',
-        producer: {
-          id: 'D012',
-        },
-        isCertified: false,
+      isCertified: true,
+    },
+    {
+      id: '4',
+      name: 'Honey',
+      description: 'Natural honey sourced from local beekeepers.',
+      producer: {
+        id: 'D012',
       },
-      {
-        id: '5',
-        name: 'Brown Eggs',
-        description: 'Fresh farm eggs with no additives.',
-        producer: {
-          id: 'E345',
-        },
-        isCertified: true,
+      isCertified: false,
+    },
+    {
+      id: '5',
+      name: 'Brown Eggs',
+      description: 'Fresh farm eggs with no additives.',
+      producer: {
+        id: 'E345',
       },
-    ],
-  };
-  
+      isCertified: true,
+    },
+  ],
+};
+
 function Dashboard() {
-  const {  status } = useQuery<Data>({
+  const [products, setProducts] = useState<Product[]>([]);
+  const { status, data } = useQuery<Data>({
     queryKey: ['data'],
     async queryFn() {
       return await request<Data>(url, query);
     },
   });
+
+  useEffect(() => {
+    if (data) {
+      setProducts(data.products);
+    } else {
+      setProducts(mockData.products);
+    }
+  }, [data]);
 
   if (status === 'pending') return <Typography>Loading...</Typography>;
   if (status === 'error') return <Typography>Error fetching products</Typography>;
@@ -125,10 +125,9 @@ function Dashboard() {
           display: 'grid',
           gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
           gap: 3,
-          
         }}
       >
-        {mockData?.products.map((product) => (
+        {products?.map((product) => (
           <Card key={product.id} sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             <CardContent sx={{ flexGrow: 1 }}>
               <Typography variant="h6">{product.name}</Typography>
