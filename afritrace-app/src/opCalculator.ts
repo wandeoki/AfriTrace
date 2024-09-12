@@ -9,6 +9,17 @@ const client = createPublicClient({
 }).extend(publicActionsL2());
 
 class OPStackCalculator {
+  static async estimateTotalFee(functionName: string, account: `0x${string}`) {
+    const fee = await client.estimateContractTotalFee({
+      address: contractAddress,
+      abi: afriTraceABI,
+      functionName,
+      account,
+    });
+
+    return fee;
+  }
+  
  
   async estimateGas(functionName: string, account: `0x${string}`): Promise<bigint> {
     const gas = await client.estimateContractTotalGas({
@@ -21,16 +32,6 @@ class OPStackCalculator {
   }
 
 
-  async estimateTotalFee(functionName: string, account: `0x${string}`): Promise<bigint> {
-    const fee = await client.estimateContractTotalFee({
-      address: contractAddress,
-      abi: afriTraceABI,
-      functionName,
-      account,
-    });
-
-    return fee;
-  }
 }
 
 export default OPStackCalculator;
