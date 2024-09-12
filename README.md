@@ -86,7 +86,15 @@ Ensure you have the following installed:
 - https://future-answer-hissing.on-fleek.app/
 
 ### Demo 
-- https://docs.google.com/presentation/d/1Vls_eZQXlBIVWae_qsXQeQrJv9ZHRHtJ/edit?usp=sharing&ouid=107174095406839047177&rtpof=true&sd=true
+[Watch the video on Loom](https://www.loom.com/share/b747f467daef486f859f05542cdf376a)
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0;">
+  <iframe src="https://www.loom.com/embed/b747f467daef486f859f05542cdf376a?sid=5609906f-776f-4ef9-ab66-8e9c6cf6e514"
+    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+[View the presentation on Google Slides](https://docs.google.com/presentation/d/1Vls_eZQXlBIVWae_qsXQeQrJv9ZHRHtJ/edit?usp=sharing&ouid=107174095406839047177&rtpof=true&sd=true)
 ### Installation
 
 1. Clone the repository:
